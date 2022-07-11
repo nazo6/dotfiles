@@ -33,13 +33,17 @@ zinit light-mode for \
 # Install plugins
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 zinit light zsh-users/zsh-autosuggestions
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-completions
 
-### General configurations
+# Environmental variables
+export EDITOR=nvim
+export PATH="$PATH:$HOME/go/bin"
 
+# General configurations
 HISTFILE=$HOME/.zsh_history
 SAVEHIST=10000
-
 
 alias ll='exa -aal --icons'
 
