@@ -12,7 +12,7 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
 end)
 
 return {
-	font = wezterm.font("HackGen Console NF"),
+	font = wezterm.font("PlemolJP Console NF"),
 	default_prog = { [[C:\Users\nazo\AppData\Local\Microsoft\WindowsApps\pwsh.exe]] },
 	keys = {
 		{ key = "l", mods = "ALT", action = "ShowLauncher" },
