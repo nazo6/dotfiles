@@ -1,2 +1,16 @@
+# global.tomlには基本的にLinux用の設定を書く。
+
 [zsh.files]
 "src/zsh" = "~/"
+
+[nushell.files]
+"src/nushell" = "~/.config/nushell/"
+
+[wezterm.files]
+"src/wezterm" = "~/.config/wezterm/"
+
+[gitui.files]
+"src/gitui" = "~/.config/gitui/"
+
+[powershell.files]
+"src/PowerShell" = "~/Documents/PowerShell"

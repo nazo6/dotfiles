@@ -1,0 +1,8 @@
+[nushell.files]
+"src/nushell" = "~/AppData/Roaming/nushell"
+
+[wezterm.files]
+"src/wezterm" = "~/.config/wezterm/"
+
+[gitui.files]
+"src/gitui" = "~/AppData/Roaming/gitui"
