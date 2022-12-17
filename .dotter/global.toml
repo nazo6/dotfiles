@@ -14,3 +14,6 @@
 
 [powershell.files]
 "src/PowerShell" = "~/Documents/PowerShell"
+
+[tmux.files]
+"src/tmux.conf" = "~/.tmux.conf"
