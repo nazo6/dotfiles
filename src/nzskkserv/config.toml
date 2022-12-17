@@ -1,0 +1,10 @@
+enable_google_cgi = true
+server_encoding = "Utf8"
+
+[[dicts]]
+url = "http://openlab.jp/skk/skk/dic/SKK-JISYO.L"
+encoding = "Eucjp"
+
+[[dicts]]
+url = "https://raw.githubusercontent.com/uasi/skk-emoji-jisyo/master/SKK-JISYO.emoji.utf8"
+encoding = "Utf8"

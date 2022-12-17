@@ -39,7 +39,10 @@ zinit light zsh-users/zsh-completions
 
 # Environmental variables
 export EDITOR=nvim
+export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/go/bin"
+export PATH="$PATH:$HOME/.cargo/bin"
+export PATH="$PATH:$HOME/.deno/bin"
 
 # General configurations
 HISTFILE=$HOME/.zsh_history
@@ -55,3 +58,8 @@ eval "$(zoxide init zsh)"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# pnpm
+export PNPM_HOME="/home/nazo/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
