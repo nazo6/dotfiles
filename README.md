@@ -5,7 +5,7 @@
 - Linux
 
 ```
-./init.sh 
+./init.sh
 # or
 ./init.sh -f
 # to force update
@@ -14,7 +14,7 @@
 - Windows
 
 ```
-./init.ps1 
+./init.ps1
 # or
 ./init.ps1 -f
 # to force update
