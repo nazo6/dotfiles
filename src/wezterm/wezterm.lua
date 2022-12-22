@@ -13,7 +13,7 @@ end)
 
 return {
 	font = wezterm.font("PlemolJP Console NF"),
-	default_prog = { [[C:\Users\nazo\AppData\Local\Microsoft\WindowsApps\pwsh.exe]] },
+	default_prog = { "powershell", "pwsh" },
 	keys = {
 		{ key = "l", mods = "ALT", action = "ShowLauncher" },
 	},
