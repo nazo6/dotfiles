@@ -17,3 +17,6 @@
 
 [tmux.files]
 "src/tmux.conf" = "~/.tmux.conf"
+
+[starship.files]
+"src/starship/starship.toml" = "~/.config/starship.toml"
