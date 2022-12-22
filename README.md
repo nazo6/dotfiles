@@ -22,8 +22,13 @@
 
 ## dependencies and so on
 
+### powershell
+
+- `starship`
+
 ### shell(zsh)
 
+- `starship` (and `lsb-release` command to increase performance)
 - `exa`
 - `zoxide`
 - `nvm`
@@ -31,4 +36,4 @@
 
 ### wezterm
 
-- Font: `HackGenNerd`
+- Font: `PlemolJP Console NF`
