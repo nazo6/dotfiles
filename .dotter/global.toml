@@ -20,3 +20,10 @@
 
 [starship.files]
 "src/starship/starship.toml" = "~/.config/starship.toml"
+
+# windows only
+[nzskkserv.files]
+"src/nzskkserv/config.toml" = "~/AppData/Roaming/nzskkserv/config/config.xml"
+
+[corvusskk.files]
+"src/corvusskk/config.xml" = "~/AppData/Roaming/CorvusSKK/config.xml"

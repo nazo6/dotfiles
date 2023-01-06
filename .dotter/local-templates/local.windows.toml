@@ -6,4 +6,6 @@ packages = [
   "gitui",
   "powershell",
   "starship",
+  "nzskkserv",
+  "corvusskk"
 ]
