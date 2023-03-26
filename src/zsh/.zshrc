@@ -54,3 +54,7 @@ export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
 eval "$(starship init zsh)"
+
+if [[ $(grep -i Microsoft /proc/version) ]]; then
+  eval $(wsl2-ssh-agent -log /tmp/wsl2-ssh-agent.log)
+fi
