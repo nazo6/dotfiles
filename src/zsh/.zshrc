@@ -35,6 +35,7 @@ export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/.deno/bin"
+export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
 
 # General configurations
 HISTFILE=$HOME/.zsh_history
