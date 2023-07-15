@@ -27,3 +27,8 @@ let-env NU_LIB_DIRS = [
 let-env NU_PLUGIN_DIRS = [
   ($nu.default-config-dir | path join 'plugins')
 ]
+
+let external_dir = ($nu.config-path | path dirname | path join 'external')
+mkdir $external_dir
+starship init nu | save -f ($external_dir | path join 'external_starship.nu')
+zoxide init nushell | save -f ($external_dir | path join 'external_zoxide.nu')

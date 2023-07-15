@@ -370,4 +370,5 @@ let-env config = {
 }
 
 source external_starship.nu
+source external_zoxide.nu
 source os.nu
