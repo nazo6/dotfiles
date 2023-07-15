@@ -1,5 +1,3 @@
-# global.tomlには基本的にLinux用の設定を書く。
-
 [zsh.files]
 "src/zsh" = "~/"
 
@@ -11,9 +9,6 @@
 
 [gitui.files]
 "src/gitui" = "~/.config/gitui/"
-
-[powershell.files]
-"src/PowerShell" = "~/Documents/PowerShell"
 
 [tmux.files]
 "src/tmux.conf" = "~/.tmux.conf"
@@ -27,3 +22,6 @@
 
 [corvusskk.files]
 "src/corvusskk/config.xml" = "~/AppData/Roaming/CorvusSKK/config.xml"
+
+[powershell.files]
+"src/PowerShell" = "~/Documents/PowerShell"

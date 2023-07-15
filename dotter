@@ -1,0 +1,2 @@
+#!/usr/bin/sh
+./.dotter/dotter -l ./.dotter/local.linux.toml $@
