@@ -1,6 +1,7 @@
 includes = [".dotter/include/linux.toml"]
 
 packages = [
+  "bash",
   "zsh",
   "gitui",
   "tmux",

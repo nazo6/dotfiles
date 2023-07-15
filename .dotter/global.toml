@@ -1,27 +1,22 @@
-[zsh.files]
-"src/zsh" = "~/"
-
+# common
 [nushell.files]
-"src/nushell" = "~/.config/nushell/"
 
 [wezterm.files]
-"src/wezterm" = "~/.config/wezterm/"
 
 [gitui.files]
-"src/gitui" = "~/.config/gitui/"
-
-[tmux.files]
-"src/tmux.conf" = "~/.tmux.conf"
 
 [starship.files]
-"src/starship/starship.toml" = "~/.config/starship.toml"
+
+# linux only
+[bash.files]
+
+[zsh.files]
+
+[tmux.files]
 
 # windows only
 [nzskkserv.files]
-"src/nzskkserv/config.toml" = "~/AppData/Roaming/nzskkserv/config/config.toml"
 
 [corvusskk.files]
-"src/corvusskk/config.xml" = "~/AppData/Roaming/CorvusSKK/config.xml"
 
 [powershell.files]
-"src/PowerShell" = "~/Documents/PowerShell"
