@@ -17,10 +17,14 @@ let-env ENV_CONVERSIONS = {
 #
 # By default, <nushell-config-dir>/scripts is added
 let-env NU_LIB_DIRS = [
-  ($nu.config-path | path join 'scripts')
+  # splitted configs
   ($nu.config-path | path dirname | path join 'config'),
   ($nu.config-path | path dirname | path join 'config/theme'),
-  ($nu.config-path | path dirname | path join 'config/os'),
+  # scripts to run after config
+  ($nu.config-path | path dirname | path join 'script/local'),
+  ($nu.config-path | path dirname | path join 'script')
+  ($nu.config-path | path dirname | path join 'script/os'),
+  # temporary folder for external scripts
   ($nu.config-path | path dirname | path join 'external'),
 ]
 
