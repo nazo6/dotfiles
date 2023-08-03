@@ -2,7 +2,7 @@ use dark_theme.nu *
 use menu.nu *
 use keybinding.nu *
 
-let-env config = {
+$env.config = {
   # true or false to enable or disable the welcome banner at startup
   show_banner: false
   ls: {

@@ -2,7 +2,7 @@
 # - converted from a string to a value on Nushell startup (from_string)
 # - converted from a value back to a string when running external commands (to_string)
 # Note: The conversions happen *after* config.nu is loaded
-let-env ENV_CONVERSIONS = {
+$env.ENV_CONVERSIONS = {
   "PATH": {
     from_string: { |s| $s | split row (char esep) | path expand --no-symlink }
     to_string: { |v| $v | path expand --no-symlink | str join (char esep) }
@@ -16,7 +16,7 @@ let-env ENV_CONVERSIONS = {
 # Directories to search for scripts when calling source or use
 #
 # By default, <nushell-config-dir>/scripts is added
-let-env NU_LIB_DIRS = [
+$env.NU_LIB_DIRS = [
   # splitted configs
   ($nu.config-path | path dirname | path join 'config'),
   ($nu.config-path | path dirname | path join 'config/theme'),
@@ -28,11 +28,12 @@ let-env NU_LIB_DIRS = [
   ($nu.config-path | path dirname | path join 'external'),
 ]
 
-let-env NU_PLUGIN_DIRS = [
+$env.NU_PLUGIN_DIRS = [
   ($nu.default-config-dir | path join 'plugins')
 ]
 
 let external_dir = ($nu.config-path | path dirname | path join 'external')
 mkdir $external_dir
 starship init nu | save -f ($external_dir | path join 'external_starship.nu')
-zoxide init nushell | save -f ($external_dir | path join 'external_zoxide.nu')
+# temporary fix (https://github.com/ajeetdsouza/zoxide/issues/599#issuecomment-1659120147)
+zoxide init nushell | str replace --string --all 'let-env ' '$env.' | save -f ($external_dir | path join 'external_zoxide.nu')
