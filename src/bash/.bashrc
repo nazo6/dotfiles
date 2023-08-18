@@ -4,7 +4,7 @@ if [[ $(grep -i Microsoft /proc/version) ]]; then
   eval $(wsl2-ssh-agent -log /tmp/wsl2-ssh-agent.log)
 fi
 
-exec nu
+[ -z "$PS1" ]  || exec nu
 
 # fnm
 export PATH="/home/nazo/.local/share/fnm:$PATH"
