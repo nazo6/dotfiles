@@ -36,4 +36,4 @@ let external_dir = ($nu.config-path | path dirname | path join 'external')
 mkdir $external_dir
 starship init nu | save -f ($external_dir | path join 'external_starship.nu')
 # temporary fix (https://github.com/ajeetdsouza/zoxide/issues/599#issuecomment-1659120147)
-zoxide init nushell | str replace --string --all 'let-env ' '$env.' | save -f ($external_dir | path join 'external_zoxide.nu')
+zoxide init nushell | str replace --all 'let-env ' '$env.' | save -f ($external_dir | path join 'external_zoxide.nu')
