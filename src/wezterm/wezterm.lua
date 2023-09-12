@@ -1,16 +1,16 @@
 local wezterm = require("wezterm")
 local act = wezterm.action
 
-wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
-  local title = tab.active_pane.title
-  if #title < max_width then
-    title = title .. string.rep(" ", max_width - #title)
-  elseif #title > max_width then
-    title = title:sub(1, max_width - 4) .. " ..."
-  end
-
-  return title
-end)
+-- wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
+--   local title = tab.active_pane.title
+--   if #title < max_width then
+--     title = title .. string.rep(" ", max_width - #title)
+--   elseif #title > max_width then
+--     title = title:sub(1, max_width - 4) .. " ..."
+--   end
+--
+--   return title
+-- end)
 
 local function is_vim(pane)
   local process_name = string.gsub(pane:get_foreground_process_name(), '(.*[/\\])(.*)', '%2')
@@ -33,7 +33,7 @@ local direction_keys = {
 local function split_nav(resize_or_move, key)
   return {
     key = key,
-    mods = resize_or_move == 'resize' and 'META' or 'CTRL|META',
+    mods = resize_or_move == 'resize' and 'SHIFT|META' or 'CTRL|META',
     action = wezterm.action_callback(function(win, pane)
       if is_vim(pane) then
         -- pass the keys through to vim/nvim
