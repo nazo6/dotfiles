@@ -33,7 +33,7 @@ local direction_keys = {
 local function split_nav(resize_or_move, key)
   return {
     key = key,
-    mods = resize_or_move == 'resize' and 'META' or 'CTRL|SHIFT',
+    mods = resize_or_move == 'resize' and 'META' or 'CTRL|META',
     action = wezterm.action_callback(function(win, pane)
       if is_vim(pane) then
         -- pass the keys through to vim/nvim
@@ -55,9 +55,9 @@ return {
   font = wezterm.font("PlemolJP Console NF"),
   default_prog = { "nu" },
   keys = {
-    { key = "l", mods = "ALT",      action = "DisableDefaultAssignment" },
-    { key = "h", mods = "CTRL|ALT", action = act.ActivateTabRelative(-1) },
-    { key = "l", mods = "CTRL|ALT", action = act.ActivateTabRelative(1) },
+    { key = "l", mods = "ALT",        action = "DisableDefaultAssignment" },
+    { key = "h", mods = "CTRL|SHIFT", action = act.ActivateTabRelative(-1) },
+    { key = "l", mods = "CTRL|SHIFT", action = act.ActivateTabRelative(1) },
     {
       key = "s",
       mods = "CTRL|ALT",
