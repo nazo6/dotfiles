@@ -4,6 +4,8 @@ format = '''
 [╭─](bold green)$os$directory$git_branch$git_status[ ](bg:#444444)[](fg:#444444)$fill[](fg:#444444)[ ](bg:#444444)$status
 [╰─](bold green) '''
 
+command_timeout = 2000
+
 [os]
 style = "fg:#00afff bg:#444444"
 format = '[ $symbol]($style)'
