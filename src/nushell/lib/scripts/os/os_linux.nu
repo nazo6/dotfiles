@@ -12,3 +12,5 @@ load-env (fnm env --shell bash | lines | str replace 'export ' '' | str replace 
 $env.PATH = ($env.PATH | prepend $"($env.FNM_MULTISHELL_PATH)/bin")
 
 # if ((sys).host.kernel_version | str contains "WSL2") {}
+
+print linux

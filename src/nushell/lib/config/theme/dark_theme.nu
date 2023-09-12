@@ -1,4 +1,4 @@
-export def dark_theme_val [] {
+export def main [] {
   {
     # color for nushell primitives
     separator: white

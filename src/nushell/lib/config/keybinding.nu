@@ -1,4 +1,4 @@
-export def keybinding_val [] {
+export def main [] {
   [
     {
       name: completion_menu

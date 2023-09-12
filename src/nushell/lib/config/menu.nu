@@ -1,4 +1,4 @@
-export def menu_val [] {
+export def main [] {
   [
     # Configuration for default nushell menus
     # Note the lack of source parameter

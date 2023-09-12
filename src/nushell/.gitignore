@@ -1,2 +1,2 @@
-external/
-script/local/*
+lib/external/
+local/

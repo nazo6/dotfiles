@@ -17,23 +17,16 @@ $env.ENV_CONVERSIONS = {
 #
 # By default, <nushell-config-dir>/scripts is added
 $env.NU_LIB_DIRS = [
-  # splitted configs
-  ($nu.config-path | path dirname | path join 'config'),
-  ($nu.config-path | path dirname | path join 'config/theme'),
-  # scripts to run after config
-  ($nu.config-path | path dirname | path join 'script/local'),
-  ($nu.config-path | path dirname | path join 'script')
-  ($nu.config-path | path dirname | path join 'script/os'),
-  # temporary folder for external scripts
-  ($nu.config-path | path dirname | path join 'external'),
+  ($nu.config-path | path dirname | path join 'local'),
+  ($nu.config-path | path dirname | path join 'lib'),
 ]
 
 $env.NU_PLUGIN_DIRS = [
   ($nu.default-config-dir | path join 'plugins')
 ]
 
-let external_dir = ($nu.config-path | path dirname | path join 'external')
+let external_dir = ($nu.config-path | path dirname | path join 'lib/external')
 mkdir $external_dir
-starship init nu | save -f ($external_dir | path join 'external_starship.nu')
+starship init nu | save -f ($external_dir | path join 'starship.nu')
 # temporary fix (https://github.com/ajeetdsouza/zoxide/issues/599#issuecomment-1659120147)
-zoxide init nushell | str replace --all 'let-env ' '$env.' | save -f ($external_dir | path join 'external_zoxide.nu')
+zoxide init nushell | str replace --all 'let-env ' '$env.' | save -f ($external_dir | path join 'zoxide.nu')
