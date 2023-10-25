@@ -86,4 +86,5 @@ return {
 	tab_max_width = 20,
 	window_decorations = "INTEGRATED_BUTTONS",
 	check_for_updates = false,
+	enable_scroll_bar = true,
 }
