@@ -27,11 +27,20 @@ $env.NU_PLUGIN_DIRS = [
 
 let external_dir = ($nu.config-path | path dirname | path join 'lib/external')
 mkdir $external_dir
-starship init nu | save -f ($external_dir | path join 'starship.nu')
-# temporary fix (https://github.com/ajeetdsouza/zoxide/issues/599#issuecomment-1659120147)
-zoxide init nushell | str replace --all 'let-env ' '$env.' | save -f ($external_dir | path join 'zoxide.nu')
 
-if (sys).host.name == "Windows" {
+if (which starship | length) != 0 {
+  starship init nu | save -f ($external_dir | path join 'starship.nu')
+} else {
+  "" | save -f ($external_dir | path join 'starship.nu')
+}
+
+if (which zoxide | length) != 0 {
+  zoxide init nushell | save -f ($external_dir | path join 'zoxide.nu')
+} else {
+  "" | save -f ($external_dir | path join 'zoxide.nu')
+}
+
+if (sys).host.name == "Windows" or (which rtx | length) == 0 {
   "" | save -f ($external_dir | path join 'rtx.nu')
 } else {
   rtx activate nu | save -f ($external_dir | path join 'rtx.nu')
