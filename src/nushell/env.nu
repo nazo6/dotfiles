@@ -40,7 +40,7 @@ if (which zoxide | length) != 0 {
   "" | save -f ($external_dir | path join 'zoxide.nu')
 }
 
-if (sys).host.name == "Windows" or (which rtx | length) == 0 {
+if ("name" in (sys).host and (sys).host.name == "Windows") or (which rtx | length) == 0 {
   "" | save -f ($external_dir | path join 'rtx.nu')
 } else {
   rtx activate nu | save -f ($external_dir | path join 'rtx.nu')

@@ -8,7 +8,7 @@ source local.nu
 source scripts/completions/git.nu
 source scripts/completions/scoop.nu
 
-if (sys).host.name == "Windows" {
+if "name" in (sys).host and (sys).host.name == "Windows" {
   source scripts/os/os_windows.nu
 } else {
   source scripts/os/os_linux.nu
