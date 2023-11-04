@@ -1,5 +1,5 @@
-use config
-$env.config = (config)
+use nu-config
+$env.config = (nu-config)
 
 source scripts/alias.nu
 source scripts/commands.nu

@@ -1,6 +1,6 @@
-use config/theme/dark_theme.nu
-use config/menu.nu
-use config/keybinding.nu
+use nu-config/theme/dark_theme.nu
+use nu-config/menu.nu
+use nu-config/keybinding.nu
 
 export def main [] {
   {
