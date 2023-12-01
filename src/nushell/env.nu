@@ -28,6 +28,20 @@ $env.NU_PLUGIN_DIRS = [
 let external_dir = ($nu.config-path | path dirname | path join 'lib/external')
 mkdir $external_dir
 
+if "name" in (sys).host and (sys).host.name == "Windows" {
+  # windows
+} else {
+  # linux
+  $env.PNPM_HOME = "~/.local/share/pnpm"
+  $env.PATH = ($env.PATH | append $env.PNPM_HOME)
+  $env.PATH = ($env.PATH | append "~/.local/bin")
+  $env.PATH = ($env.PATH | append "~/go/bin")
+  $env.PATH = ($env.PATH | append "~/.cargo/bin")
+  $env.PATH = ($env.PATH | append "~/.deno/bin")
+  $env.PATH = ($env.PATH | append "~/.local/share/bob/nvim-bin")
+}
+
+
 if (which starship | length) != 0 {
   starship init nu | save -f ($external_dir | path join 'starship.nu')
 } else {
@@ -45,3 +59,4 @@ if ("name" in (sys).host and (sys).host.name == "Windows") or (which rtx | lengt
 } else {
   rtx activate nu | save -f ($external_dir | path join 'rtx.nu')
 }
+
