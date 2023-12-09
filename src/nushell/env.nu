@@ -32,7 +32,7 @@ if "name" in (sys).host and (sys).host.name == "Windows" {
   # windows
 } else {
   # linux
-  $env.PNPM_HOME = "~/.local/share/pnpm"
+  $env.PNPM_HOME = ($env.HOME | path join ".local/share/pnpm")
   $env.PATH = ($env.PATH | append $env.PNPM_HOME)
   $env.PATH = ($env.PATH | append "~/.local/bin")
   $env.PATH = ($env.PATH | append "~/go/bin")
