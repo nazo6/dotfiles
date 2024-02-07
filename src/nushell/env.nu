@@ -38,6 +38,7 @@ if "name" in (sys).host and (sys).host.name == "Windows" {
   $env.PATH = ($env.PATH | append "~/.local/bin")
   $env.PATH = ($env.PATH | append "~/go/bin")
   $env.PATH = ($env.PATH | append "~/.cargo/bin")
+  $env.PATH = ($env.PATH | append "~/.rye/shims")
   $env.PATH = ($env.PATH | append "~/.deno/bin")
   $env.PATH = ($env.PATH | append "~/.local/share/bob/nvim-bin")
 }
