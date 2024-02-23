@@ -56,8 +56,6 @@ return {
 	default_prog = { "nu" },
 	keys = {
 		{ key = "l", mods = "ALT", action = "DisableDefaultAssignment" },
-		{ key = "h", mods = "CTRL|SHIFT", action = act.ActivateTabRelative(-1) },
-		{ key = "l", mods = "CTRL|SHIFT", action = act.ActivateTabRelative(1) },
 		{
 			key = "s",
 			mods = "CTRL|ALT",
@@ -87,4 +85,10 @@ return {
 	window_decorations = "INTEGRATED_BUTTONS",
 	check_for_updates = false,
 	enable_scroll_bar = true,
+	window_padding = {
+		top = 0,
+		bottom = 0,
+		left = 0,
+		right = 0,
+	},
 }
