@@ -1,5 +1,4 @@
 use nu-config
-$env.config = (nu-config)
 
 source scripts/alias.nu
 source scripts/commands.nu
@@ -10,4 +9,5 @@ source scripts/completions/scoop.nu
 
 source external/starship.nu
 source external/zoxide.nu
-source external/rtx.nu
+
+$env.config = (nu-config)

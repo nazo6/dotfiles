@@ -13,9 +13,8 @@ $env.ENV_CONVERSIONS = {
   }
 }
 
-# Directories to search for scripts when calling source or use
-#
-# By default, <nushell-config-dir>/scripts is added
+# nushellは動的にスクリプトを読み込めないので、最初に見つかったファイルがロードされることを利用して擬似的に条件付きロードを行う
+# つまり、`/local`→`/override`→`/lib`の順にロードされる
 $env.NU_LIB_DIRS = [
   ($nu.config-path | path dirname | path join 'local'),
   ($nu.config-path | path dirname | path join 'override'),
@@ -30,7 +29,7 @@ let external_dir = ($nu.config-path | path dirname | path join 'lib/external')
 mkdir $external_dir
 
 if "name" in (sys).host and (sys).host.name == "Windows" {
-  # windows
+  # windowsではシェルじゃなくて普通に設定画面でPATHを設定する
 } else {
   # linux
   $env.PNPM_HOME = ($env.HOME | path join ".local/share/pnpm")
@@ -56,10 +55,3 @@ if (which zoxide | length) != 0 {
 } else {
   "" | save -f ($external_dir | path join 'zoxide.nu')
 }
-
-if ("name" in (sys).host and (sys).host.name == "Windows") or (which rtx | length) == 0 {
-  "" | save -f ($external_dir | path join 'rtx.nu')
-} else {
-  rtx activate nu | save -f ($external_dir | path join 'rtx.nu')
-}
-
