@@ -32,8 +32,6 @@ if "name" in (sys).host and (sys).host.name == "Windows" {
   # windowsではシェルじゃなくて普通に設定画面でPATHを設定する
 } else {
   # linux
-  $env.PNPM_HOME = ($env.HOME | path join ".local/share/pnpm")
-  $env.PATH = ($env.PATH | append $env.PNPM_HOME)
   $env.PATH = ($env.PATH | append "~/.local/bin")
   $env.PATH = ($env.PATH | append "~/go/bin")
   $env.PATH = ($env.PATH | append "~/.cargo/bin")
@@ -41,6 +39,7 @@ if "name" in (sys).host and (sys).host.name == "Windows" {
   $env.PATH = ($env.PATH | append "~/.deno/bin")
   $env.PATH = ($env.PATH | append "~/.local/share/bob/nvim-bin")
   $env.PATH = ($env.PATH | append "~/.rbenv/shims")
+  $env.PATH = ($env.PATH | append "~/.local/share/mise/shims")
 }
 
 
