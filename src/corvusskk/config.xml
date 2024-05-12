@@ -120,7 +120,7 @@
     <key name="convchar" value="\cq" />
     <key name="jlatin" value="L" />
     <key name="ascii" value="l" />
-    <key name="jmode" value="" />
+    <key name="jmode" value="\cj" />
     <key name="abbrev" value="/" />
     <key name="affix" value="&lt;|>" />
     <key name="nextcand" value="\x20|\cn" />
