@@ -53,6 +53,7 @@ end
 
 return {
 	font = wezterm.font("PlemolJP Console NF"),
+	font_size = 11.5,
 	default_prog = { "nu" },
 	keys = {
 		{ key = "l", mods = "ALT", action = "DisableDefaultAssignment" },
