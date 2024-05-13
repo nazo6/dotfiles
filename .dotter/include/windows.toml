@@ -1,5 +1,5 @@
 [nushell.files]
-"src/nushell" = "~/AppData/Roaming/nushell"
+"src/nushell" = "~/.config/nushell"
 
 [wezterm.files]
 "src/wezterm" = "~/.config/wezterm/"
@@ -17,4 +17,4 @@
 "src/nzskkserv" = "~/AppData/Roaming/nzskkserv/config"
 
 [corvusskk.files]
-"src/corvusskk/config.xml"  = "~/AppData/Roaming/CorvusSKK/config.xml"
+"src/corvusskk/config.xml" = "~/AppData/Roaming/CorvusSKK/config.xml"
