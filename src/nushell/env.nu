@@ -34,12 +34,13 @@ if "name" in (sys).host and (sys).host.name == "Windows" {
   # linux
   $env.PATH = ($env.PATH | append "~/.local/bin")
   $env.PATH = ($env.PATH | append "~/go/bin")
+  $env.PATH = ($env.PATH | append "~/.proto/bin")
+  $env.PATH = ($env.PATH | append "~/.proto/shims")
   $env.PATH = ($env.PATH | append "~/.cargo/bin")
   $env.PATH = ($env.PATH | append "~/.rye/shims")
   $env.PATH = ($env.PATH | append "~/.deno/bin")
   $env.PATH = ($env.PATH | append "~/.local/share/bob/nvim-bin")
   $env.PATH = ($env.PATH | append "~/.rbenv/shims")
-  $env.PATH = ($env.PATH | append "~/.local/share/mise/shims")
   $env.PATH = ($env.PATH | append "~/.dotnet/tools")
 }
 
