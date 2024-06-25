@@ -28,7 +28,7 @@ $env.NU_PLUGIN_DIRS = [
 let external_dir = ($nu.config-path | path dirname | path join 'lib/external')
 mkdir $external_dir
 
-if "name" in (sys).host and (sys).host.name == "Windows" {
+if "name" in (sys host) and (sys host).name == "Windows" {
   # windowsではシェルじゃなくて普通に設定画面でPATHを設定する
 } else {
   # linux
