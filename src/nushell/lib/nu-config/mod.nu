@@ -4,7 +4,6 @@ use nu-config/keybinding.nu
 
 export def main [] {
   {
-    # true or false to enable or disable the welcome banner at startup
     show_banner: false
     ls: {
       use_ls_colors: true # use the LS_COLORS environment variable to colorize output
@@ -92,7 +91,7 @@ export def main [] {
   
     history: {
       max_size: 100_000 # Session has to be reloaded for this to take effect
-      sync_on_enter: true # Enable to share history between multiple sessions, else you have to close the session to write history to file
+      sync_on_enter: false # Enable to share history between multiple sessions, else you have to close the session to write history to file
       file_format: "plaintext" # "sqlite" or "plaintext"
       isolation: true # true enables history isolation, false disables it. true will allow the history to be isolated to the current session. false will allow the history to be shared across all sessions.
     }
