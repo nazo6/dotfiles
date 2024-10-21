@@ -91,8 +91,8 @@ export def main [] {
   
     history: {
       max_size: 100_000 # Session has to be reloaded for this to take effect
-      sync_on_enter: false # Enable to share history between multiple sessions, else you have to close the session to write history to file
-      file_format: "plaintext" # "sqlite" or "plaintext"
+      sync_on_enter: true # Enable to share history between multiple sessions, else you have to close the session to write history to file
+      file_format: "sqlite" # "sqlite" or "plaintext"
       isolation: true # true enables history isolation, false disables it. true will allow the history to be isolated to the current session. false will allow the history to be shared across all sessions.
     }
     completions: {
@@ -116,8 +116,7 @@ export def main [] {
       vi_normal: underscore # block, underscore, line, blink_block, blink_underscore, blink_line (underscore is the default)
     }
     color_config: (dark_theme) # if you want a light theme, replace `$dark_theme` to `$light_theme`
-    use_grid_icons: true
-    footer_mode: "25" # always, never, number_of_rows, auto
+    # footer_mode: 25 # always, never, number_of_rows, auto
     float_precision: 2 # the precision for displaying floats in tables
     # buffer_editor: "emacs" # command that will be used to edit the current line buffer with ctrl+o, if unset fallback to $env.EDITOR and $env.VISUAL
     use_ansi_coloring: true
