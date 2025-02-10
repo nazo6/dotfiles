@@ -1,10 +1,18 @@
 enable_google_cgi = true
 server_encoding = "Utf8"
+port = 1178
 
 [[dicts]]
 url = "http://openlab.jp/skk/skk/dic/SKK-JISYO.L"
 encoding = "Eucjp"
+format = "Skk"
 
 [[dicts]]
 url = "https://raw.githubusercontent.com/uasi/skk-emoji-jisyo/master/SKK-JISYO.emoji.utf8"
 encoding = "Utf8"
+format = "Skk"
+
+[[dicts]]
+url = "https://raw.githubusercontent.com/ncaq/dic-nico-intersection-pixiv/master/public/dic-nico-intersection-pixiv-google.txt"
+encoding = "Utf8"
+format = "Mozc"
