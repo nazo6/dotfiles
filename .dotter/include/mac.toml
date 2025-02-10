@@ -1,0 +1,17 @@
+[bash.files]
+"src/bash" = "~/"
+
+[nushell.files]
+"src/nushell" = "~/Library/Application Support/nushell/"
+
+[wezterm.files]
+"src/wezterm" = "~/.config/wezterm/"
+
+[gitui.files]
+"src/gitui" = "~/.config/gitui/"
+
+[tmux.files]
+"src/tmux.conf" = "~/.tmux.conf"
+
+[starship.files]
+"src/starship/starship.toml" = "~/.config/starship.toml"

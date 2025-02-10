@@ -44,6 +44,12 @@ if "name" in (sys host) and (sys host).name == "Windows" {
   $env.PATH = ($env.PATH | append "~/.dotnet/tools")
 }
 
+if "name" in (sys host) and (sys host).name == "Darwin" {
+  # macos
+  $env.PATH = ($env.PATH | split row (char esep) | prepend '/opt/homebrew/bin')
+}
+ 
+
 
 if (which starship | length) != 0 {
   starship init nu | save -f ($external_dir | path join 'starship.nu')

@@ -1,22 +1,15 @@
-# common
-[nushell.files]
+[helpers]
 
-[wezterm.files]
+[default]
+depends = []
 
-[gitui.files]
+[default.files]
+"README.md" = ""
+dotter = ""
+"dotter.ps1" = ""
+src = ""
 
-[starship.files]
+[default.variables]
 
-# linux only
-[bash.files]
-
-[zsh.files]
-
-[tmux.files]
-
-# windows only
-[nzskkserv.files]
-
-[corvusskk.files]
-
-[powershell.files]
+[settings]
+default_target_type = "automatic"

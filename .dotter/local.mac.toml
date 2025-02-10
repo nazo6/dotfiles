@@ -1,0 +1,9 @@
+includes = [".dotter/include/mac.toml"]
+
+packages = [
+  "bash",
+  "gitui",
+  "tmux",
+  "nushell",
+  "starship",
+]
