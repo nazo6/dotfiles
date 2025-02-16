@@ -11,4 +11,5 @@ source local.nu
 
 source external/starship.nu
 source external/zoxide.nu
+source external/mise.nu
 

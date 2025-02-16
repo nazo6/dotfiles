@@ -50,7 +50,6 @@ if "name" in (sys host) and (sys host).name == "Darwin" {
 }
  
 
-
 if (which starship | length) != 0 {
   starship init nu | save -f ($external_dir | path join 'starship.nu')
 } else {
@@ -61,4 +60,10 @@ if (which zoxide | length) != 0 {
   zoxide init nushell | save -f ($external_dir | path join 'zoxide.nu')
 } else {
   "" | save -f ($external_dir | path join 'zoxide.nu')
+}
+
+if (which mise | length) != 0 {
+  mise activate nu | save -f ($external_dir | path join 'mise.nu')
+} else {
+  "" | save -f ($external_dir | path join 'mise.nu')
 }
