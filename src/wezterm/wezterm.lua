@@ -51,9 +51,13 @@ local function split_nav(resize_or_move, key)
 	}
 end
 
+wezterm.on("mux-is-process-stateful", function(proc)
+	return false
+end)
+
 return {
-	font = wezterm.font("PlemolJP Console NF"),
-	font_size = 11.5,
+	font = wezterm.font("PlemolJP Console NF Medium"),
+	font_size = 10.5,
 	default_prog = { "nu" },
 	keys = {
 		{ key = "l", mods = "ALT", action = "DisableDefaultAssignment" },
@@ -81,7 +85,6 @@ return {
 		split_nav("resize", "k"),
 		split_nav("resize", "l"),
 	},
-	front_end = "WebGpu",
 	tab_max_width = 20,
 	window_decorations = "INTEGRATED_BUTTONS",
 	check_for_updates = false,
@@ -92,4 +95,5 @@ return {
 		left = 0,
 		right = 0,
 	},
+	hide_mouse_cursor_when_typing = false,
 }
