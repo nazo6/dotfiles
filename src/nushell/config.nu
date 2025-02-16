@@ -9,7 +9,4 @@ source local.nu
 # source scripts/completions/git.nu
 # source scripts/completions/scoop.nu
 
-source external/starship.nu
-source external/zoxide.nu
-source external/mise.nu
-
+source external/ext_scripts.nu

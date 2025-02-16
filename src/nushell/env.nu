@@ -48,22 +48,19 @@ if "name" in (sys host) and (sys host).name == "Darwin" {
   # macos
   $env.PATH = ($env.PATH | split row (char esep) | prepend '/opt/homebrew/bin')
 }
- 
 
-if (which starship | length) != 0 {
-  starship init nu | save -f ($external_dir | path join 'starship.nu')
-} else {
-  "" | save -f ($external_dir | path join 'starship.nu')
+
+"" | save -f ($external_dir | path join "ext_scripts.nu")
+
+def save-ext-script [args] {
+  let args = $args | split words
+  let cmd = $args.0
+  if (which $cmd | length) != 0 {
+    run-external ...$args | save -f ($external_dir | path join $"($cmd).nu")
+    $"source external/($cmd).nu\n" | save -a ($external_dir | path join "ext_scripts.nu")
+  }
 }
 
-if (which zoxide | length) != 0 {
-  zoxide init nushell | save -f ($external_dir | path join 'zoxide.nu')
-} else {
-  "" | save -f ($external_dir | path join 'zoxide.nu')
-}
-
-if (which mise | length) != 0 {
-  mise activate nu | save -f ($external_dir | path join 'mise.nu')
-} else {
-  "" | save -f ($external_dir | path join 'mise.nu')
-}
+save-ext-script "starship init nu"
+save-ext-script "zoxide init nushell"
+save-ext-script "mise activate nu"
