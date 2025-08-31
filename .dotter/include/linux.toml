@@ -1,20 +1,4 @@
-[bash.files]
-"src/bash" = "~/"
-
-[zsh.files]
-"src/zsh" = "~/"
+# Linux only packages
 
 [nushell.files]
 "src/nushell" = "~/.config/nushell/"
-
-[wezterm.files]
-"src/wezterm" = "~/.config/wezterm/"
-
-[gitui.files]
-"src/gitui" = "~/.config/gitui/"
-
-[tmux.files]
-"src/tmux.conf" = "~/.tmux.conf"
-
-[starship.files]
-"src/starship/starship.toml" = "~/.config/starship.toml"

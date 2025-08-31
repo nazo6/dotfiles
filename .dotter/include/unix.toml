@@ -1,0 +1,22 @@
+# Unix (linux and macOS) only packages
+
+[bash.files]
+"src/bash" = "~/"
+
+[zsh.files]
+"src/zsh" = "~/"
+
+[fish.files]
+"src/fish" = "~/.config/fish/"
+
+[wezterm.files]
+"src/wezterm" = "~/.config/wezterm/"
+
+[gitui.files]
+"src/gitui" = "~/.config/gitui/"
+
+[tmux.files]
+"src/tmux.conf" = "~/.tmux.conf"
+
+[starship.files]
+"src/starship/starship.toml" = "~/.config/starship.toml"

@@ -1,13 +1,1 @@
-[helpers]
 
-[default]
-depends = []
-
-[default.files]
-"README.md" = ""
-src = ""
-
-[default.variables]
-
-[settings]
-default_target_type = "automatic"
