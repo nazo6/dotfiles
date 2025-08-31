@@ -1,5 +1,5 @@
 [nushell.files]
-"src/nushell" = "~/.config/nushell"
+"src/nushell" = "~/AppData/Roaming/nushell"
 
 [wezterm.files]
 "src/wezterm" = "~/.config/wezterm/"

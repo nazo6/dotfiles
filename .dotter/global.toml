@@ -5,8 +5,6 @@ depends = []
 
 [default.files]
 "README.md" = ""
-dotter = ""
-"dotter.ps1" = ""
 src = ""
 
 [default.variables]
