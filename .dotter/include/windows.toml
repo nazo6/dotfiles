@@ -18,3 +18,11 @@
 
 [corvusskk.files]
 "src/corvusskk/config.xml" = "~/AppData/Roaming/CorvusSKK/config.xml"
+
+# for msys
+
+[fish.files]
+"src/fish" = "~/.config/fish/"
+
+[bash.files]
+"src/bash-msys" = "~/"
