@@ -16,7 +16,7 @@ export def main [] {
       name: completion_previous
       modifier: shift
       keycode: backtab
-      mode: [emacs, vi_normal, vi_insert] # Note: You can add the same keybinding to all modes by using a list
+      mode: [emacs, vi_normal, vi_insert]
       event: { send: menuprevious }
     }
     {

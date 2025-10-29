@@ -55,12 +55,12 @@ export def main [] {
     shape_custom: green
     shape_datetime: cyan_bold
     shape_directory: cyan
-    shape_external: cyan
+    shape_external: darkorange
+    shape_external_resolved: cyan_bold
     shape_externalarg: green_bold
     shape_filepath: cyan
     shape_flag: blue_bold
     shape_float: purple_bold
-    # shapes are used to change the cli syntax highlighting
     shape_garbage: { fg: white bg: red attr: b}
     shape_globpattern: cyan_bold
     shape_int: purple_bold
