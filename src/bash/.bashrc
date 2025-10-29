@@ -25,5 +25,5 @@ esac
 if ! command -v fish &> /dev/null; then
   echo "Fish shell is not installed."
 else
-  exec fish
+  exec nu
 fi
