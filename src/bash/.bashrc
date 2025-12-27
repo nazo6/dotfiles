@@ -8,15 +8,10 @@ if [[ $(grep -i Microsoft /proc/version) ]]; then
   if command -v wsl2-ssh-agent &> /dev/null; then
     eval $(wsl2-ssh-agent -log /tmp/wsl2-ssh-agent.log)
   fi
-fi
 
-# pnpm
-export PNPM_HOME="/home/wada/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
+  # Fix cuda
+  export LD_LIBRARY_PATH=/usr/lib/wsl/lib:$LD_LIBRARY_PATH
+fi
 
 # If not running interactively
 [[ $- != *i* ]] && return
