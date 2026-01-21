@@ -58,8 +58,6 @@ if type mise &> /dev/null; then
 
     local activate_str=$(_mise_wrapper activate zsh | sed "s/'[^']*mise\.exe'/_mise_wrapper/g" | sed "s/command _mise_wrapper/_mise_wrapper/g")
 
-    print -r $activate_str
-
     eval $activate_str
 
     # Mise adds a command_not_found_handler which is very slow on msys2.
