@@ -88,7 +88,11 @@ zinit light-mode for \
     zdharma-continuum/zinit-annex-bin-gem-node \
     zdharma-continuum/zinit-annex-patch-dl \
     zdharma-continuum/zinit-annex-rust \
-    zsh-users/zsh-syntax-highlighting \
-    zsh-users/zsh-autosuggestions
 
 ### End of Zinit's installer chunk
+
+
+zinit ice atinit'zmodload zsh/zprof' \
+    atload'zprof | head -n 20; zmodload -u zsh/zprof'
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-autosuggestions
