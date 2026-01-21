@@ -1,4 +1,0 @@
-# Mac only packages
-
-[nushell.files]
-"src/nushell" = "~/Library/Application Support/nushell/"

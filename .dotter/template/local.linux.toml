@@ -1,3 +1,2 @@
-includes = [".dotter/include/unix.toml", ".dotter/include/linux.toml"]
-
-packages = ["bash", "fish", "gitui", "starship"]
+includes = [".dotter/include/unix.toml"]
+packages = ["gitui", "tmux", "starship", "zsh"]

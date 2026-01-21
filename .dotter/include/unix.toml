@@ -1,8 +1,5 @@
 # Unix (linux and macOS) only packages
 
-[bash.files]
-"src/bash" = "~/"
-
 [zsh.files]
 "src/zsh" = "~/"
 

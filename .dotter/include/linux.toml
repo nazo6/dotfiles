@@ -1,4 +1,0 @@
-# Linux only packages
-
-[nushell.files]
-"src/nushell" = "~/.config/nushell/"
