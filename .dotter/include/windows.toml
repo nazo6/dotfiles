@@ -15,3 +15,6 @@
 
 [corvusskk.files]
 "src/corvusskk/config.xml" = "~/AppData/Roaming/CorvusSKK/config.xml"
+
+[nushell.files]
+"src/nushell" = "~/AppData/Roaming/nushell"
