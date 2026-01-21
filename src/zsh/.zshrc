@@ -92,7 +92,7 @@ zinit light-mode for \
 ### End of Zinit's installer chunk
 
 
-zinit ice atinit'zmodload zsh/zprof' \
-    atload'zprof | head -n 20; zmodload -u zsh/zprof'
+# zinit ice atinit'zmodload zsh/zprof' \
+#     atload'zprof | head -n 20; zmodload -u zsh/zprof'
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-autosuggestions
