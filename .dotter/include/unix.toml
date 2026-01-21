@@ -1,8 +1,5 @@
 # Unix (linux and macOS) only packages
 
-[zsh.files]
-"src/zsh" = "~/"
-
 [fish.files]
 "src/fish" = "~/.config/fish/"
 

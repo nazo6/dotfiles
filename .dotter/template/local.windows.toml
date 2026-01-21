@@ -1,5 +1,4 @@
 includes = [".dotter/include/windows.toml"]
-
 packages = [
   "wezterm",
   "nushell",
@@ -7,5 +6,6 @@ packages = [
   "powershell",
   "starship",
   "nzskkserv",
-  "corvusskk"
+  "corvusskk",
+  "sheldon"
 ]

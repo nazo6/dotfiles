@@ -1,0 +1,8 @@
+shell = "zsh"
+
+[plugins]
+[plugins.syntax-highlighting]
+github = "zsh-users/zsh-syntax-highlighting"
+
+[plugins.autosuggestions]
+github = "zsh-users/zsh-autosuggestions"
