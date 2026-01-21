@@ -46,6 +46,10 @@ if type zoxide &> /dev/null; then
   eval "$(zoxide init zsh)"
 fi
 
+if type mise &> /dev/null; then
+  eval "$(mise activate zsh)"
+fi
+
 if type sheldon &> /dev/null; then
   eval "$(sheldon source)"
 fi
