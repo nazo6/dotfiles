@@ -56,20 +56,41 @@ if type mise &> /dev/null; then
         command mise "$@" | sed -E "s/PATH='([^']+)'/PATH=\"\$(cygpath -u -p '\1')\"/g"
     }
 
-    local activate_str=$(_mise_wrapper activate zsh)
-    local activate_str=${activate_str//$mise_path_win/_mise_wrapper}
+    local activate_str=$(_mise_wrapper activate zsh | sed "s/'[^']*mise\.exe'/_mise_wrapper/g" | sed "s/command _mise_wrapper/_mise_wrapper/g")
 
-    echo MISE PATH:
-    print -r $mise_path
-    echo ACTIVATE STR:
     print -r $activate_str
+
     eval $activate_str
+
+    # Mise adds a command_not_found_handler which is very slow on msys2.
+    # With this code, response will be faster, but you lose the feature of suggesting installation of missing commands.
+    [[ ! -v functions[command_not_found_handler] ]] || unfunction command_not_found_handler
   else
     eval "$(mise activate zsh)"
   fi
 fi
 
-if type sheldon &> /dev/null; then
-  eval "$(sheldon source)"
+### Added by Zinit's installer
+if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
+    print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
+    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
+        print -P "%F{33} %F{34}Installation successful.%f%b" || \
+        print -P "%F{160} The clone has failed.%f%b"
 fi
 
+source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+
+# Load a few important annexes, without Turbo
+# (this is currently required for annexes)
+zinit light-mode for \
+    zdharma-continuum/zinit-annex-as-monitor \
+    zdharma-continuum/zinit-annex-bin-gem-node \
+    zdharma-continuum/zinit-annex-patch-dl \
+    zdharma-continuum/zinit-annex-rust \
+    zsh-users/zsh-syntax-highlighting \
+    zsh-users/zsh-autosuggestions
+
+### End of Zinit's installer chunk
