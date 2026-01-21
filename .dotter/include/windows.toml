@@ -18,3 +18,6 @@
 
 [nushell.files]
 "src/nushell" = "~/AppData/Roaming/nushell"
+
+[zsh.files]
+"src/zsh" = "~/"

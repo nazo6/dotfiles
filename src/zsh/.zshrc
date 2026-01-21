@@ -47,7 +47,26 @@ if type zoxide &> /dev/null; then
 fi
 
 if type mise &> /dev/null; then
-  eval "$(mise activate zsh)"
+  if [[ "$OSTYPE" == "cygwin" ]]; then
+    # Very hacky way to make mise work on msys2
+    
+    local mise_path_win=$(where.exe mise | head -n 1 | tr -d '\r')
+
+    _mise_wrapper() {
+        command mise "$@" | sed -E "s/PATH='([^']+)'/PATH=\"\$(cygpath -u -p '\1')\"/g"
+    }
+
+    local activate_str=$(_mise_wrapper activate zsh)
+    local activate_str=${activate_str//$mise_path_win/_mise_wrapper}
+
+    echo MISE PATH:
+    print -r $mise_path
+    echo ACTIVATE STR:
+    print -r $activate_str
+    eval $activate_str
+  else
+    eval "$(mise activate zsh)"
+  fi
 fi
 
 if type sheldon &> /dev/null; then
