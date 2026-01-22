@@ -1,3 +1,5 @@
+# zmodload zsh/zprof
+
 export PATH="$PATH:$HOME/.local/bin"
 export PATH=~/.local/share/bob/nvim-bin:$PATH
 export PATH=~/.cargo/bin:$PATH
@@ -22,6 +24,11 @@ fi
 alias n='nvim'
 alias lg='lazygit'
 alias reload='source ~/.zshrc'
+
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+setopt appendhistory
 
 if type ghq &> /dev/null && type fzf &> /dev/null; then
   gs() {
@@ -91,8 +98,5 @@ zinit light-mode for \
 
 ### End of Zinit's installer chunk
 
-
-# zinit ice atinit'zmodload zsh/zprof' \
-#     atload'zprof | head -n 20; zmodload -u zsh/zprof'
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-autosuggestions
