@@ -55,21 +55,8 @@ fi
 
 if type mise &> /dev/null; then
   if [[ "$OSTYPE" == "cygwin" ]]; then
-    # Very hacky way to make mise work on msys2
-    
-    local mise_path_win=$(where.exe mise | head -n 1 | tr -d '\r')
-
-    _mise_wrapper() {
-        command mise "$@" | sed -E "s/PATH='([^']+)'/PATH=\"\$(cygpath -u -p '\1')\"/g"
-    }
-
-    local activate_str=$(_mise_wrapper activate zsh --no-hook-env | sed "s/'[^']*mise\.exe'/_mise_wrapper/g" | sed "s/command _mise_wrapper/_mise_wrapper/g")
-
-    eval $activate_str
-
-    # Mise adds a command_not_found_handler which is very slow on msys2.
-    # With this code, response will be faster, but you lose the feature of suggesting installation of missing commands.
-    [[ ! -v functions[command_not_found_handler] ]] || unfunction command_not_found_handler
+    # mise activate script cause error on windows. Just manually adds path
+    export PATH="$HOME/AppData/Local/mise/shims:$PATH"
   else
     eval "$(mise activate zsh)"
   fi
