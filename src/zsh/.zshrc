@@ -1,4 +1,4 @@
-# zmodload zsh/zprof
+zmodload zsh/zprof
 
 export PATH="$PATH:$HOME/.local/bin"
 export PATH=~/.local/share/bob/nvim-bin:$PATH
@@ -63,7 +63,7 @@ if type mise &> /dev/null; then
         command mise "$@" | sed -E "s/PATH='([^']+)'/PATH=\"\$(cygpath -u -p '\1')\"/g"
     }
 
-    local activate_str=$(_mise_wrapper activate zsh | sed "s/'[^']*mise\.exe'/_mise_wrapper/g" | sed "s/command _mise_wrapper/_mise_wrapper/g")
+    local activate_str=$(_mise_wrapper activate zsh --no-hook-env | sed "s/'[^']*mise\.exe'/_mise_wrapper/g" | sed "s/command _mise_wrapper/_mise_wrapper/g")
 
     eval $activate_str
 
