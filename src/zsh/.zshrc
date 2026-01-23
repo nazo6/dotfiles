@@ -5,7 +5,7 @@ export PATH=~/.local/share/bob/nvim-bin:$PATH
 export PATH=~/.cargo/bin:$PATH
 
 # WSL specific settings
-if [[ $(grep -i Microsoft /proc/version) ]]; then
+if [[ -f /proc/version ]] && grep -i Microsoft /proc/version &> /dev/null; then
   if command -v wsl2-ssh-agent &> /dev/null; then
     eval $(wsl2-ssh-agent -log /tmp/wsl2-ssh-agent.log)
   fi
