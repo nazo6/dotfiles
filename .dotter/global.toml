@@ -1,5 +1,2 @@
 [zsh.files]
 "src/zsh" = "~/"
-
-[sheldon.files]
-"src/sheldon" = "~/.config/sheldon"
