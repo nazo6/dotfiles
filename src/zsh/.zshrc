@@ -1,11 +1,5 @@
 zmodload zsh/zprof
 
-export PATH="$PATH:$HOME/.local/bin"
-export PATH=~/.local/share/bob/nvim-bin:$PATH
-export PATH=~/.cargo/bin:$PATH
-
-export EDITOR='nvim'
-
 # WSL specific settings
 if [[ -f /proc/version ]] && grep -i Microsoft /proc/version &> /dev/null; then
   if command -v wsl2-ssh-agent &> /dev/null; then
@@ -17,6 +11,12 @@ if [[ -f /proc/version ]] && grep -i Microsoft /proc/version &> /dev/null; then
 fi
 
 ##### Config #####
+
+export PATH="$PATH:$HOME/.local/bin"
+export PATH=~/.local/share/bob/nvim-bin:$PATH
+export PATH=~/.cargo/bin:$PATH
+
+export EDITOR='nvim'
 
 # history
 HISTFILE=~/.histfile
@@ -46,6 +46,15 @@ alias lg='lazygit'
 alias reload='source ~/.zshrc'
 
 ##### External tools #####
+
+if type mise &> /dev/null; then
+  if [[ "$OSTYPE" == "cygwin" ]]; then
+    # mise activate script cause error on windows (msys). Just manually adds path
+    export PATH="$HOME/AppData/Local/mise/shims:$PATH"
+  else
+    eval "$(mise activate zsh)"
+  fi
+fi
 
 if type eza &> /dev/null; then
   alias ls='eza'
@@ -80,14 +89,6 @@ if type atuin &> /dev/null; then
   eval "$(atuin init zsh)"
 fi
 
-if type mise &> /dev/null; then
-  if [[ "$OSTYPE" == "cygwin" ]]; then
-    # mise activate script cause error on windows. Just manually adds path
-    export PATH="$HOME/AppData/Local/mise/shims:$PATH"
-  else
-    eval "$(mise activate zsh)"
-  fi
-fi
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
@@ -112,5 +113,6 @@ zinit light-mode for \
 
 ### End of Zinit's installer chunk
 
-zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-syntax-highlighting
