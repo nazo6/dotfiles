@@ -30,7 +30,7 @@ alias reload='source ~/.zshrc'
 HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
-setopt appendhistory
+setopt incappendhistory
 
 if type ghq &> /dev/null && type fzf &> /dev/null; then
   gs() {
