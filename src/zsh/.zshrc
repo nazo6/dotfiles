@@ -76,6 +76,10 @@ if type zoxide &> /dev/null; then
   eval "$(zoxide init zsh)"
 fi
 
+if type atuin &> /dev/null; then
+  eval "$(atuin init zsh)"
+fi
+
 if type mise &> /dev/null; then
   if [[ "$OSTYPE" == "cygwin" ]]; then
     # mise activate script cause error on windows. Just manually adds path
