@@ -16,21 +16,43 @@ if [[ -f /proc/version ]] && grep -i Microsoft /proc/version &> /dev/null; then
   export LD_LIBRARY_PATH=/usr/lib/wsl/lib:$LD_LIBRARY_PATH
 fi
 
+##### Config #####
+
+# history
+HISTFILE=~/.histfile
+HISTSIZE=10000
+SAVEHIST=10000
+setopt incappendhistory
+setopt hist_ignore_dups
+setopt hist_ignore_space
+setopt hist_reduce_blanks
+
+# autocompletion
+autoload -Uz compinit && compinit -u
+zstyle ':completion:*' menu select
+setopt auto_menu
+setopt auto_param_keys
+setopt list_packed
+
+# others
+setopt auto_cd
+setopt auto_param_slash
+setopt mark_dirs
+
+##### Alias #####
+
+alias n='nvim'
+alias lg='lazygit'
+alias reload='source ~/.zshrc'
+
+##### External tools #####
+
 if type eza &> /dev/null; then
   alias ls='eza'
   alias ll='eza -la'
 else
   alias ll='ls -la'
 fi
-
-alias n='nvim'
-alias lg='lazygit'
-alias reload='source ~/.zshrc'
-
-HISTFILE=~/.histfile
-HISTSIZE=10000
-SAVEHIST=10000
-setopt incappendhistory
 
 if type ghq &> /dev/null && type fzf &> /dev/null; then
   gs() {
@@ -46,7 +68,6 @@ if type ghq &> /dev/null && type fzf &> /dev/null; then
   }
 fi
 
-# External tools
 if type starship &> /dev/null; then
   eval "$(starship init zsh)"
 fi
