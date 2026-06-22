@@ -1,15 +1,30 @@
-"$schema" = 'https://starship.rs/config-schema.json'
+"$schema" = "https://starship.rs/config-schema.json"
 
 format = '''
-[╭─](bold green)$os$directory$git_branch$git_status[ ](bg:#444444)[](fg:#444444)$fill[](fg:#444444)[ ](bg:#444444)$status
+[╭─](bold green)$os$directory$hostname$git_branch$git_status[ ](bg:#444444)[](fg:#444444)$fill[](fg:#444444)[ ](bg:#444444)$status
 [╰─](bold green) '''
 
 command_timeout = 2000
 
 [os]
 style = "fg:#00afff bg:#444444"
-format = '[ $symbol]($style)'
+format = "[ $symbol]($style)"
 disabled = false
+
+[os.symbols]
+Alpine = " "
+Android = " "
+Arch = " "
+CentOS = " "
+Debian = " "
+Fedora = " "
+Linux = " "
+Macos = " "
+Manjaro = " "
+NixOS = " "
+Ubuntu = " "
+Unknown = " "
+Windows = " "
 
 [directory]
 style = "fg:#00afff bg:#444444"
@@ -17,6 +32,11 @@ format = "[│ ](bg:#444444)[$path]($style)"
 truncation_length = 5
 truncate_to_repo = false
 
+[hostname]
+ssh_only = true
+disabled = false
+style = "fg:#00ff00 bg:#444444"
+format = "[ @ ](bg:#444444)[$hostname $ssh_symbol]($style)"
 
 [git_status]
 style = "bg:#444444 fg:#d7af00"
@@ -38,25 +58,10 @@ symbol = ""
 format = "[  $symbol $branch]($style)"
 
 [fill]
-symbol = '·'
-style = 'green'
+symbol = "·"
+style = "green"
 
 [status]
 style = "bg:#444444"
 disabled = false
-format = '[$symbol $status ]($style)'
-
-[os.symbols]
-Alpine = " "
-Android = " "
-Arch = " "
-CentOS = " "
-Debian = " "
-Fedora = " "
-Linux = " "
-Macos = " "
-Manjaro = " "
-NixOS = " "
-Ubuntu = " "
-Unknown = " "
-Windows = " "
+format = "[$symbol $status ]($style)"
