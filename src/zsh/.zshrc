@@ -1,5 +1,13 @@
 zmodload zsh/zprof
 
+##### Config #####
+
+export PATH="$PATH:$HOME/.local/bin"
+export PATH=~/.local/share/bob/nvim-bin:$PATH
+export PATH=~/.cargo/bin:$PATH
+
+export EDITOR='nvim'
+
 # WSL specific settings
 if [[ -f /proc/version ]] && grep -i Microsoft /proc/version &> /dev/null; then
   if command -v wsl2-ssh-agent &> /dev/null; then
@@ -9,14 +17,6 @@ if [[ -f /proc/version ]] && grep -i Microsoft /proc/version &> /dev/null; then
   # Fix cuda
   export LD_LIBRARY_PATH=/usr/lib/wsl/lib:$LD_LIBRARY_PATH
 fi
-
-##### Config #####
-
-export PATH="$PATH:$HOME/.local/bin"
-export PATH=~/.local/share/bob/nvim-bin:$PATH
-export PATH=~/.cargo/bin:$PATH
-
-export EDITOR='nvim'
 
 # history
 HISTFILE=~/.histfile
